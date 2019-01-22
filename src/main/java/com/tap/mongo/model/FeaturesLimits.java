@@ -7,17 +7,26 @@ import java.util.Map;
 
 public class FeaturesLimits {
 	private String Status;
-	private Map<String, String> featureslimits = new HashMap<>();
+	
+
+	private List featureslimits = new ArrayList<String>();
+	
+	public FeaturesLimits(String Status , List featureslimits) {
+		this.Status = Status;
+		this.featureslimits = featureslimits;
+	}
+	
 	public String getStatus() {
 		return Status;
 	}
 	public void setStatus(String status) {
 		Status = status;
 	}
-	public Map<String, String> getFeatureslimits() {
+	
+	public List getFeatureslimits() {
 		return featureslimits;
 	}
-	public void setFeatureslimits(Map<String, String> featureslimits) {
+	public void setFeatureslimits(List featureslimits) {
 		this.featureslimits = featureslimits;
 	}
 	@Override

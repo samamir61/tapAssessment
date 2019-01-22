@@ -52,6 +52,7 @@ public class PaymentPlansController {
 	public Payment_Plans listplans(@RequestHeader(value="X-Auth-Token", required=false) String token){
 		 return this.dataServices.ListAllPlans();
 	}
+	
 	@GetMapping("{user_id}/plan")
 	public payment_plan UserPlans(@RequestHeader(value="X-Auth-Token", required=false) String token , @PathVariable String user_id){
 		 
@@ -62,6 +63,12 @@ public class PaymentPlansController {
 	public FeaturesLimits limits(@RequestHeader(value="X-Auth-Token", required=false) String token , @PathVariable String user_id){
 		 
 		return this.dataServices.Featureslimits(user_id);
+	}
+	
+	@PutMapping("{user_id}/plan/feature1/limit/update")
+	public payment_plan updatelimit(@RequestHeader(value="X-Auth-Token", required=false) String token , @PathVariable String user_id , @RequestBody Map<String, Object> object){
+		 
+		return this.dataServices.Updatelimit(user_id , object);
 	}
 	
 	

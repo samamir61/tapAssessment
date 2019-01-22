@@ -1,6 +1,8 @@
 package com.tap.mongo.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,11 +13,13 @@ public class EndUser {
 	private String firstName;
 	private String lastName;
 	private String password;
-	private String payment_plan;
-	public String getPayment_plan() {
+	private Map<String, Object> payment_plan = new HashMap<>();
+	
+
+	public Map<String, Object> getPayment_plan() {
 		return payment_plan;
 	}
-	public void setPayment_plan(String payment_plan) {
+	public void setPayment_plan(Map<String, Object> payment_plan) {
 		this.payment_plan = payment_plan;
 	}
 	private String access_token;

@@ -22,6 +22,8 @@ public abstract interface PaymentPlansServices {
 	public abstract payment_plan UserPlans(String user_id);
 	
 	public abstract FeaturesLimits Featureslimits(String user_id);
+
+	public abstract payment_plan Updatelimit(String user_id, Map<String, Object> object);
 	
 
 	
