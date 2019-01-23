@@ -111,13 +111,11 @@ public class PlansRepo implements PaymentPlansServices {
 				Map <String,Object> userFeaturesMap= new HashMap<>();
 				Map<String, Object> FeatBalance = (Map<String, Object>) PlanFeat.get("limit");
 				Integer FeatureBalance =   Integer.parseInt(FeatBalance.get("Balance").toString());	
-				System.out.println(PlanFeat.get("name"));
+				
 				for(int j=0; j < UserPlan.size(); j++) {
 					Map<String, Object> usPlan = (Map<String, Object>) UserPlan.get(j);
-					System.out.println(usPlan.get("name"));
+					
 					if(usPlan.get("id").toString().equals(PlanFeat.get("id").toString()) ) {
-						System.out.println(usPlan.get("id"));
-						System.out.println(PlanFeat.get("id"));
 					Integer userBalance =   Integer.parseInt(usPlan.get("Balance").toString());	
 					Integer usage = Math.abs(userBalance - FeatureBalance);
 					userFeaturesMap.put("id", usPlan.get("id"));
@@ -130,7 +128,7 @@ public class PlansRepo implements PaymentPlansServices {
 			}
 			
 			
-			System.out.println(userPlanFeatures);
+			
 			
 		}
 		
@@ -143,7 +141,7 @@ public class PlansRepo implements PaymentPlansServices {
 			EndUser user = mongoOperation.findOne(query, EndUser.class);
 
 			ArrayList<Object> UserPlan =  (ArrayList<Object>) user.getPayment_plan().get("features");
-			System.out.println(UserPlan);
+			
 			
 			String Status = "";
 			if(!(user == null)) {

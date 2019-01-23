@@ -1,11 +1,32 @@
 # tapAssessment
 
+# Technologies 
+
+1- Java JDK 8 
+2- Maven  3.2
+3- Spring framework 5.1.2.RELEASE
+4- Apatceh tomcat v9.0
+
+# setup 
+
+Install the previous technologies on the machiene 
+
+# run the project 
+
+1- run the project as maven install to install the required depdependencies
+2- run the project on tomcat server
+
+#IDE 
+Eclipse Oxygen  
+
+
+
 # APIS URLS
 
 
 # Create plan : 
 
-## Request : http://localhost:8080/tapAssessment/api/plan/create
+# Request : http://localhost:8080/tapAssessment/api/plan/create
 Method : POST
 RequestBody: {
 	  "name": String,

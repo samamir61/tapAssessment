@@ -23,27 +23,12 @@ import org.springframework.security.crypto.util.EncodingUtils;
 @EnableWebSecurity
 @ComponentScan(basePackages = "com.tap" )
 public class TapConfiguration extends WebSecurityConfigurerAdapter{
-//	@Bean
-//	public AuthServicesImp authServicesImp() {
-//		return new AuthServicesImp();
-//		
-//	}
+
 	@Bean 
 	public PlansRepo mongoDBPOperation() {
 		return new PlansRepo();
 	}
-	
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder(){
-		return new BCryptPasswordEncoder();
-		
-	}
-	
-	@Bean 
-	public BCrypt passEncode() {
-		return new BCrypt();
-	}
-	
+
 	@Bean 
 	public payment_plan plans() {
 		return new payment_plan();
