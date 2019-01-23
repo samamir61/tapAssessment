@@ -40,7 +40,7 @@ public class PlansRepo implements PaymentPlansServices {
 	MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
 	
 	
-	public payment_plan registerNewUser(Map<String, Object> object) {
+	public payment_plan CreateNewPlan(Map<String, Object> object) {
 		
 		payment_plan plan = new payment_plan();
 		plan.setName((String) object.get("name"));

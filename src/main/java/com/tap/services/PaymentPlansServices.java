@@ -13,7 +13,7 @@ import com.tap.mongoRepos.PlansRepo;
 public abstract interface PaymentPlansServices {
 	
 	
-	public abstract payment_plan registerNewUser(Map<String, Object> object);
+	public abstract payment_plan CreateNewPlan(Map<String, Object> object);
 	
 	public abstract Payment_Plans ListAllPlans();
 	
