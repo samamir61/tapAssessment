@@ -4,8 +4,9 @@
 
 * 1- Java JDK 8 
 * 2- Maven  3.2
-* 3- Spring framework 5.1.2.RELEASE
-* 4- Apatceh tomcat v9.0
+* 3- Mongo db v3.6.3 
+* 4- Spring framework 5.1.2.RELEASE
+* 5- Apatceh tomcat v9.0
 
 # setup 
 
@@ -19,7 +20,21 @@ Install the previous technologies on the machiene
 # IDE 
 Eclipse Oxygen  
 
+# Notes about DB 
 
+* You need to manually insert user as the following 
+{"_id":"5c45e7321267ab423e5b3236",
+"userName":"String",
+"email":"String",
+"firstName":"String"
+,"lastName":"String",
+"password":"String",
+"payment_plan":{"plan_id":"String","name":"String",
+"features":[{"id":"String","name":"String","Balance":String}}]
+}
+}
+
+* you can you use MongoDB compass to ease the proccess of checking and creating tables and modefying data in MongoDB
 
 # APIS URLS
 
