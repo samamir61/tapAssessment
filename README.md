@@ -109,14 +109,14 @@ Method :GET
 
 
 
-#User Plan 
+# User Plan 
 
 Request : http://localhost:8080/tapAssessment/api/{user_id}/plan
 Method : GET
 
 
 
-*plan feature limit and usage
+# plan feature limit and usage
 
 Request : http://localhost:8080/tapAssessment/api/{user_id}/plan/feature1/limit
 Method : GET 
