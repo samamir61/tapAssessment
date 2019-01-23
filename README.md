@@ -2,10 +2,10 @@
 
 # Technologies 
 
-1- Java JDK 8 
-2- Maven  3.2
-3- Spring framework 5.1.2.RELEASE
-4- Apatceh tomcat v9.0
+* 1- Java JDK 8 
+* 2- Maven  3.2
+* 3- Spring framework 5.1.2.RELEASE
+* 4- Apatceh tomcat v9.0
 
 # setup 
 
@@ -13,10 +13,10 @@ Install the previous technologies on the machiene
 
 # run the project 
 
-1- run the project as maven install to install the required depdependencies
-2- run the project on tomcat server
+* 1- run the project as maven install to install the required depdependencies
+* 2- run the project on tomcat server
 
-#IDE 
+# IDE 
 Eclipse Oxygen  
 
 
@@ -26,9 +26,10 @@ Eclipse Oxygen
 
 # Create plan : 
 
-# Request : http://localhost:8080/tapAssessment/api/plan/create
-Method : POST
-RequestBody: {
+# Request : 
+* http://localhost:8080/tapAssessment/api/plan/create
+* Method : POST
+* RequestBody: {
 	  "name": String,
 	  "price": {
 	    "amount": int,
@@ -66,7 +67,7 @@ RequestBody: {
 	  ]
 	}
 
-Response : {
+* Response : {
 		"id": "5c4855337f230a37486a9f4a",
 		"name": "plan 1",
 		"price": {
@@ -109,12 +110,12 @@ Response : {
 
 # Update Plan : 
 
-Request : http://localhost:8080/tapAssessment/api/plan/{plan_id}/update
-Method : PUT
+* Request : http://localhost:8080/tapAssessment/api/plan/{plan_id}/update
+* Method : PUT
 
-RequestBody : {"" : ""}
+* RequestBody : {"" : ""}
 
-Response: 
+* Response: 
 	{
 	 .....
 	 
@@ -125,24 +126,24 @@ Response:
 
 # List All Plans 
 
-Request : http://localhost:8080/tapAssessment/api/plan/list_all
-Method :GET
+* Request : http://localhost:8080/tapAssessment/api/plan/list_all
+* Method :GET
 
 
 
 # User Plan 
 
-Request : http://localhost:8080/tapAssessment/api/{user_id}/plan
-Method : GET
+* Request : http://localhost:8080/tapAssessment/api/{user_id}/plan
+* Method : GET
 
 
 
 # plan feature limit and usage
 
-Request : http://localhost:8080/tapAssessment/api/{user_id}/plan/feature1/limit
-Method : GET 
+* Request : http://localhost:8080/tapAssessment/api/{user_id}/plan/feature1/limit
+* Method : GET 
 
-Response: {
+* Response: {
 		"featureslimits": [
 		  {
 		"usage": 0,
@@ -157,15 +158,15 @@ Response: {
 
 # update feature limit : 
 
-Reuqest : http://localhost:8080/tapAssessment/api/{user_id}/plan/feature1/limit/update
-Method : PUT 
+* Reuqest : http://localhost:8080/tapAssessment/api/{user_id}/plan/feature1/limit/update
+* Method : PUT 
 
-Request : {
+* Request : {
 	    "id" : "String", 
 	    "limit" : Int
 	  }
  
-Respone : {
+* Respone : {
 	
 	   .....
 	 
