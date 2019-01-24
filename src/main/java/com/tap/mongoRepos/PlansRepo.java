@@ -139,7 +139,9 @@ public class PlansRepo implements PaymentPlansServices {
 	public payment_plan Updatelimit(String user_id, Map<String, Object> object) {
 			Query query = new Query(Criteria.where("_id").is(new ObjectId(user_id)));
 			EndUser user = mongoOperation.findOne(query, EndUser.class);
-
+			payment_plan plan = UserPlans(user_id);
+			ArrayList<Object> PaymentPlanFeatures =  (ArrayList<Object>) plan.getFeatures();
+			System.out.println(PaymentPlanFeatures);
 			ArrayList<Object> UserPlan =  (ArrayList<Object>) user.getPayment_plan().get("features");
 			
 			
@@ -149,13 +151,27 @@ public class PlansRepo implements PaymentPlansServices {
 				for(int i = 0; i < UserPlan.size(); i++ ) {
 					Map<String, Object> usPlan = (Map<String, Object>) UserPlan.get(i);
 					if(usPlan.get("id").equals(object.get("id"))) {
-						usPlan.put("Balance", object.get("limit"));
+						for(int j = 0; j < PaymentPlanFeatures.size(); j++) {
+							Map <String, Object> planFeatures = (Map<String, Object>) PaymentPlanFeatures.get(i);
+							if(object.get("id").equals(planFeatures.get("id"))){
+								System.out.println(planFeatures.get("limit"));
+								Map <String, Object> FeatureLimit = (Map<String, Object>) planFeatures.get("limit");
+								Integer FeatureBalance =   Integer.parseInt(FeatureLimit.get("Balance").toString());
+								Integer updatedBalance =   Integer.parseInt(object.get("limit").toString());
+								if(updatedBalance <= FeatureBalance) {
+									usPlan.put("Balance", object.get("limit"));
+									update.set(	"payment_plan.features", UserPlan);		
+									EndUser updatePlan = mongoOperation.findAndModify(query, update, EndUser.class);
+									Status = "updated succefully";
+								}else {
+									Status = "updated balance exceeded the feature limit";
+								}
+							}
+						}
 					}
 				}
 			
-			update.set(	"payment_plan.features", UserPlan);		
-			EndUser updatePlan = mongoOperation.findAndModify(query, update, EndUser.class);
-			Status = "updated succefully";
+			
 			}else {
 			Status = "payment plan was not found";
 			}
