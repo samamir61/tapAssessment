@@ -23,14 +23,14 @@ Eclipse Oxygen
 # Notes about DB 
 
 * You need to manually insert user as the following 
-{"_id":"5c45e7321267ab423e5b3236",
+{
 "userName":"String",
 "email":"String",
 "firstName":"String"
 ,"lastName":"String",
 "password":"String",
 "payment_plan":{"plan_id":"String","name":"String",
-"features":[{"id":"String","name":"String","Balance":String}}]
+"features":[{"id":"String","name":"String","Balance":Int}}]
 }
 }
 
